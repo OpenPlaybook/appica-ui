@@ -114,7 +114,7 @@ function DialogContent({
               <BaseDialog.Close
                 aria-label={closeLabel}
                 data-slot="dialog-close-button"
-                className={cn(buttonVariants({ variant: 'outline', size: 'icon-sm' }), 'absolute inset-e-3 top-3 z-10')}
+                className={cn(buttonVariants({ variant: 'outline', size: 'icon-md' }), 'absolute inset-e-3 top-3 z-10')}
               >
                 <CloseIcon />
               </BaseDialog.Close>

@@ -328,7 +328,7 @@ describe('DateField', () => {
     const { container } = render(<DateField defaultValue={JUN_23} size="lg" variant="soft" className="custom-x" />)
     const root = getRoot(container)
     expect(root.className).toContain('custom-x')
-    expect(root.className).toContain('h-10')
+    expect(root.className).toContain('h-11')
     expect(root.className).toContain('bg-background-muted')
   })
 

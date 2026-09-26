@@ -325,7 +325,7 @@ describe('TimeField', () => {
     const { container } = render(<TimeField defaultValue="09:30" size="lg" variant="soft" className="custom-x" />)
     const root = getRoot(container)
     expect(root.className).toContain('custom-x')
-    expect(root.className).toContain('h-10')
+    expect(root.className).toContain('h-11')
     expect(root.className).toContain('bg-background-muted')
   })
 

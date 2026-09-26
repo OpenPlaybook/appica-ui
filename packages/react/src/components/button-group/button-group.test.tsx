@@ -97,7 +97,7 @@ describe('ButtonGroup', () => {
     )
 
     const button = container.querySelector('[data-slot="button"]') as HTMLElement
-    expect(button.className).toContain('h-12')
+    expect(button.className).toContain('h-11')
   })
 
   it('propagates variant to child Buttons', () => {
@@ -123,11 +123,11 @@ describe('ButtonGroup', () => {
     )
 
     const overridden = container.querySelector('[data-testid="overridden"]') as HTMLElement
-    expect(overridden.className).toContain('h-8')
-    expect(overridden.className).not.toContain('h-12')
+    expect(overridden.className).toContain('h-7')
+    expect(overridden.className).not.toContain('h-11')
 
     const inherits = container.querySelector('[data-testid="inherits"]') as HTMLElement
-    expect(inherits.className).toContain('h-12')
+    expect(inherits.className).toContain('h-11')
   })
 
   it('merges caller className on the wrapper', () => {
@@ -155,7 +155,7 @@ describe('ButtonGroup', () => {
     )
 
     const nested = container.querySelector('[data-testid="nested"]') as HTMLElement
-    expect(nested.className).toContain('h-12')
+    expect(nested.className).toContain('h-11')
     expect(nested.className).toContain('before:border')
   })
 
@@ -206,7 +206,7 @@ describe('ButtonGroup', () => {
     const { container } = render(<Button data-testid="solo">Solo</Button>)
     const btn = container.querySelector('[data-testid="solo"]') as HTMLButtonElement
     expect(btn.disabled).toBe(false)
-    expect(btn.className).toContain('h-10') // md
+    expect(btn.className).toContain('h-9') // md
   })
 
   it('has no accessibility violations', async () => {

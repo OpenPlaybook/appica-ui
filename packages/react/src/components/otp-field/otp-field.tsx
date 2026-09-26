@@ -25,9 +25,9 @@ function useOTPFieldContext() {
 }
 
 const INPUT_SQUARE: Record<OTPFieldSize, string> = {
-  sm: 'w-8',
-  md: 'w-10',
-  lg: 'w-12',
+  sm: 'w-7',
+  md: 'w-9',
+  lg: 'w-11',
 }
 
 const SEPARATOR_SIZE: Record<OTPFieldSize, string> = {

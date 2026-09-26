@@ -36,7 +36,7 @@ describe('Button', () => {
     const el = screen.getByRole('button', { name: 'Delete' })
     expect(el.className).toContain('bg-error')
     expect(el.className).toContain('text-error-foreground')
-    expect(el.className).toContain('h-10')
+    expect(el.className).toContain('h-11')
   })
 
   it('fires onClick when clicked', async () => {

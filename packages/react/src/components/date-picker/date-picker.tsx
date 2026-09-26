@@ -185,8 +185,8 @@ const DEFAULT_TRIGGER_ICON = (
 
 const TRIGGER_BUTTON_OVERRIDES: Record<DatePickerSize, string> = {
   sm: 'size-5 rounded-xs -me-1',
-  md: 'size-6 rounded-sm -me-1.5',
-  lg: 'size-8 rounded-md -me-2',
+  md: 'size-7 rounded-sm -me-1.5',
+  lg: 'size-9 rounded-md -me-2',
 }
 
 const TRIGGER_BUTTON_SIZES: Record<DatePickerSize, 'icon-sm' | 'icon-md' | 'icon-lg'> = {

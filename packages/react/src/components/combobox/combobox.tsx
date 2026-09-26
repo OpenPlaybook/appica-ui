@@ -257,28 +257,28 @@ function ComboboxValue(props: ComboboxValueProps) {
 }
 
 const CHIP_SIZE: Record<ComboboxSize, string> = {
-  sm: 'h-5 px-2 text-xs rounded-xs gap-1',
-  md: 'h-6 px-2.5 text-sm rounded-sm gap-1.5',
-  lg: 'h-8 px-3 text-base rounded-md gap-1.5',
+  sm: 'h-4.5 px-2 text-xs rounded-xs gap-1',
+  md: 'h-6.5 px-2.5 text-sm rounded-sm gap-1.5',
+  lg: 'h-8.5 px-3 text-base rounded-md gap-1.5',
 }
 
 const CHIPS_FILLED_MIN_H: Record<ComboboxSize, string> = {
   sm: 'has-data-[slot=combobox-chip]:min-h-7',
-  md: 'has-data-[slot=combobox-chip]:min-h-8',
-  lg: 'has-data-[slot=combobox-chip]:min-h-10',
+  md: 'has-data-[slot=combobox-chip]:min-h-9',
+  lg: 'has-data-[slot=combobox-chip]:min-h-11',
 }
 
 const CONTROLS_FILLED_PAD: Record<ComboboxSize, string> = {
   sm: cn(
-    'group-has-data-[slot=combobox-chip]/combobox-chips:pt-1',
+    'group-has-data-[slot=combobox-chip]/combobox-chips:h-4.5',
     'group-has-data-[slot=combobox-chip]/combobox-chips:pe-2',
   ),
   md: cn(
-    'group-has-data-[slot=combobox-chip]/combobox-chips:pt-1.5',
+    'group-has-data-[slot=combobox-chip]/combobox-chips:h-6.5',
     'group-has-data-[slot=combobox-chip]/combobox-chips:pe-2.5',
   ),
   lg: cn(
-    'group-has-data-[slot=combobox-chip]/combobox-chips:pt-2.5',
+    'group-has-data-[slot=combobox-chip]/combobox-chips:h-8.5',
     'group-has-data-[slot=combobox-chip]/combobox-chips:pe-3',
   ),
 }
