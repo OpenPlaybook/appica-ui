@@ -54,7 +54,7 @@ describe('Input', () => {
 
   it('applies size classes', () => {
     render(<Input aria-label="Large" inputSize="lg" />)
-    expect(screen.getByRole('textbox').className).toContain('h-12')
+    expect(screen.getByRole('textbox').className).toContain('h-10')
   })
 
   it('applies variant classes', () => {

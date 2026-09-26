@@ -20,9 +20,9 @@ const numberFieldWidth: Record<NumberFieldSize, string> = {
 }
 
 const stepperSize: Record<NumberFieldSize, { size: 'icon-sm' | 'icon-md' | 'icon-lg'; override: string }> = {
-  sm: { size: 'icon-sm', override: 'size-7 rounded-xs [&_svg]:size-3.5!' },
-  md: { size: 'icon-md', override: 'size-9 rounded-sm [&_svg]:size-4!' },
-  lg: { size: 'icon-lg', override: 'size-11 rounded-md [&_svg]:size-4.5!' },
+  sm: { size: 'icon-sm', override: 'size-6.5 rounded-xs [&_svg]:size-3.5!' },
+  md: { size: 'icon-md', override: 'size-7.5 rounded-sm [&_svg]:size-4!' },
+  lg: { size: 'icon-lg', override: 'size-9.5 rounded-md [&_svg]:size-4.5!' },
 }
 
 const stepperButtonVariant: Record<NumberFieldVariant, 'soft' | 'outline'> = {

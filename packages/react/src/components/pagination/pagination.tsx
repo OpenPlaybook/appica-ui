@@ -86,9 +86,9 @@ interface PaginationLinkProps extends useRender.ComponentProps<'a', PaginationLi
 }
 
 const LINK_SIZE_OVERRIDES: Record<PaginationSize, string> = {
-  sm: 'px-2 gap-0.5 text-xs min-w-8 has-data-[icon=end]:pe-1 has-data-[icon=start]:ps-1',
-  md: 'px-2.5 gap-0.5 text-sm min-w-10 has-data-[icon=end]:pe-1.5 has-data-[icon=start]:ps-1.5',
-  lg: 'px-3 gap-0.5 text-base min-w-12 has-data-[icon=end]:pe-2 has-data-[icon=start]:ps-2',
+  sm: 'px-2 gap-0.5 text-xs min-w-7 has-data-[icon=end]:pe-1 has-data-[icon=start]:ps-1',
+  md: 'px-2.5 gap-0.5 text-sm min-w-8 has-data-[icon=end]:pe-1.5 has-data-[icon=start]:ps-1.5',
+  lg: 'px-3 gap-0.5 text-base min-w-10 has-data-[icon=end]:pe-2 has-data-[icon=start]:ps-2',
 }
 
 function PaginationLink({ className, active = false, disabled = false, render, ...props }: PaginationLinkProps) {
@@ -121,9 +121,9 @@ function PaginationLink({ className, active = false, disabled = false, render, .
 type PaginationEllipsisProps = React.ComponentPropsWithoutRef<'span'>
 
 const ELLIPSIS_SIZE: Record<PaginationSize, string> = {
-  sm: 'h-8 w-6 pb-1 [&_svg]:size-4',
-  md: 'h-10 w-7 pb-1.5 [&_svg]:size-4.5',
-  lg: 'h-12 w-8 pb-2 [&_svg]:size-5',
+  sm: 'h-7 w-6 pb-1 [&_svg]:size-4',
+  md: 'h-8 w-7 pb-1 [&_svg]:size-4.5',
+  lg: 'h-10 w-8 pb-1.5 [&_svg]:size-5',
 }
 
 function PaginationEllipsis({ className, children, ...props }: PaginationEllipsisProps) {

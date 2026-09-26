@@ -48,14 +48,17 @@ describe('Table', () => {
 
   it('applies size padding via parent descendant selectors', () => {
     const { rerender } = render(<Demo size="sm" />)
-    expect(screen.getByRole('table').className).toContain('[&_td]:p-3')
+    expect(screen.getByRole('table').className).toContain('[&_td]:px-3')
+    expect(screen.getByRole('table').className).toContain('[&_td]:py-2')
     expect(screen.getByRole('table').className).toContain('p-1 ')
 
     rerender(<Demo size="md" />)
-    expect(screen.getByRole('table').className).toContain('[&_td]:p-3.5')
+    expect(screen.getByRole('table').className).toContain('[&_td]:px-3.5')
+    expect(screen.getByRole('table').className).toContain('[&_td]:py-2.5')
 
     rerender(<Demo size="lg" />)
-    expect(screen.getByRole('table').className).toContain('[&_td]:p-4')
+    expect(screen.getByRole('table').className).toContain('[&_td]:px-4')
+    expect(screen.getByRole('table').className).toContain('[&_td]:py-3')
     expect(screen.getByRole('table').className).toContain('p-1.5')
   })
 

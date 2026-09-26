@@ -53,13 +53,13 @@ describe('Chip', () => {
     const el = screen.getByRole('button', { name: 'Hi' })
     expect(el.className).toContain('my-chip')
     expect(el.className).toContain('bg-error')
-    expect(el.className).toContain('h-6')
+    expect(el.className).toContain('h-5')
   })
 
   it('uses soft variant and md size by default', () => {
     render(<Chip>Default</Chip>)
     const el = screen.getByRole('button', { name: 'Default' })
-    expect(el.className).toContain('h-8')
+    expect(el.className).toContain('h-7')
   })
 
   it('non-dismissible click invokes user onClick and does not unmount', async () => {
@@ -177,11 +177,11 @@ describe('ChipGroup', () => {
     const overrideChip = screen.getByRole('button', { name: 'Override' })
 
     expect(inheritsChip.className).toContain('bg-primary')
-    expect(inheritsChip.className).toContain('h-10')
+    expect(inheritsChip.className).toContain('h-9')
     expect(inheritsChip.className).toContain('text-base')
 
     // Override chip keeps its own size.
-    expect(overrideChip.className).toContain('h-6')
+    expect(overrideChip.className).toContain('h-5')
     expect(overrideChip.className).toContain('text-xs')
   })
 

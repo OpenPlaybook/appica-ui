@@ -57,9 +57,9 @@ const tabsIndicatorVariants = cva(
   {
     variants: {
       variant: {
-        pill: 'w-(--active-tab-width) data-[orientation=horizontal]:top-0.5 data-[orientation=horizontal]:h-[calc(100%-0.25rem)] data-[orientation=vertical]:top-0 data-[orientation=vertical]:bottom-(--active-tab-bottom) data-[orientation=vertical]:inset-s-0.5 data-[orientation=vertical]:h-(--active-tab-height) rounded-[inherit] bg-white shadow-lg',
+        pill: 'w-(--active-tab-width) data-[orientation=horizontal]:top-0.5 data-[orientation=horizontal]:h-[calc(100%-0.25rem)] data-[orientation=vertical]:top-0 data-[orientation=vertical]:bottom-(--active-tab-bottom) data-[orientation=vertical]:inset-s-0.5 data-[orientation=vertical]:h-(--active-tab-height) rounded-[inherit] bg-primary shadow-lg',
         line: cn(
-          'rounded-full bg-foreground-intense',
+          'rounded-full bg-primary',
           'data-[orientation=horizontal]:bottom-0 data-[orientation=horizontal]:h-0.5 data-[orientation=horizontal]:w-(--active-tab-width)',
           'data-[orientation=vertical]:top-[calc(var(--active-tab-height)/4)] data-[orientation=vertical]:h-[calc(var(--active-tab-height)/2)] data-[orientation=vertical]:w-0.5',
         ),
@@ -74,8 +74,8 @@ const tabsTriggerVariants = cva(
   {
     variants: {
       variant: {
-        pill: 'data-active:text-black',
-        line: 'data-active:text-foreground-intense',
+        pill: 'data-active:text-primary-foreground',
+        line: 'data-active:text-primary',
       },
       size: {
         sm: "text-xs [&_svg:not([class*='size-'])]:size-4",
@@ -107,29 +107,29 @@ const tabsTriggerInnerVariants = cva(
         line: '',
       },
       size: {
-        sm: 'gap-1 py-2',
-        md: 'gap-1.5 py-2.5',
-        lg: 'gap-1.5 py-3',
-        'icon-sm': 'size-8',
-        'icon-md': 'size-10',
-        'icon-lg': 'size-12',
+        sm: 'gap-1 py-1.5',
+        md: 'gap-1.5 py-1.5',
+        lg: 'gap-1.5 py-2',
+        'icon-sm': 'size-7',
+        'icon-md': 'size-8',
+        'icon-lg': 'size-10',
       },
     },
     compoundVariants: [
       {
         variant: 'pill',
         size: 'sm',
-        class: 'rounded-sm px-3.5 has-data-[icon=end]:pe-2.5 has-data-[icon=start]:ps-2.5',
+        class: 'rounded-sm px-3 has-data-[icon=end]:pe-2 has-data-[icon=start]:ps-2',
       },
       {
         variant: 'pill',
         size: 'md',
-        class: 'rounded-md px-4.5 has-data-[icon=end]:pe-3 has-data-[icon=start]:ps-3',
+        class: 'rounded-md px-3.5 has-data-[icon=end]:pe-2.5 has-data-[icon=start]:ps-2.5',
       },
       {
         variant: 'pill',
         size: 'lg',
-        class: 'rounded-lg px-5.5 has-data-[icon=end]:pe-4 has-data-[icon=start]:ps-4',
+        class: 'rounded-lg px-4 has-data-[icon=end]:pe-3 has-data-[icon=start]:ps-3',
       },
       { variant: 'pill', size: 'icon-sm', class: 'rounded-sm' },
       { variant: 'pill', size: 'icon-md', class: 'rounded-md' },

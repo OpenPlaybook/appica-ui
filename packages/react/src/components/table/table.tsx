@@ -11,9 +11,9 @@ const sizeOuter: Record<TableSize, string> = {
 }
 
 const sizeCellPad: Record<TableSize, string> = {
-  sm: '[&_th]:p-3 [&_td]:p-3',
-  md: '[&_th]:p-3.5 [&_td]:p-3.5',
-  lg: '[&_th]:p-4 [&_td]:p-4',
+  sm: '[&_th]:px-3 [&_td]:px-3 [&_th]:py-2 [&_td]:py-2',
+  md: '[&_th]:px-3.5 [&_td]:px-3.5 [&_th]:py-2.5 [&_td]:py-2.5',
+  lg: '[&_th]:px-4 [&_td]:px-4 [&_th]:py-3 [&_td]:py-3',
 }
 
 const sizeHeaderCorners: Record<TableSize, string> = {
@@ -42,10 +42,10 @@ const borderStyleClasses: Record<TableBorderStyle, string> = {
 }
 
 const tableBaseClasses = cn(
-  'w-full border-separate border-spacing-0 bg-background text-foreground border border-border-muted align-middle',
+  'w-full border-separate border-spacing-0 bg-background text-foreground font-semibold border border-border-muted align-middle',
   '[&>thead>tr>th]:bg-background-muted',
-  '[&>thead>tr>th]:text-foreground-intense [&>thead>tr>th]:font-medium',
-  '[&>tbody_th]:text-foreground-intense [&>tbody_th]:font-medium [&>tbody_th]:border-b',
+  '[&>thead>tr>th]:text-foreground-intense [&>thead>tr>th]:font-semibold',
+  '[&>tbody_th]:text-foreground-intense [&>tbody_th]:font-semibold [&>tbody_th]:border-b',
   '[&_td]:align-middle [&_td]:border-b',
   '[&>tbody:last-of-type>tr:last-child>td]:border-b-0',
   '[&>tbody:last-of-type>tr:last-child>th]:border-b-0',

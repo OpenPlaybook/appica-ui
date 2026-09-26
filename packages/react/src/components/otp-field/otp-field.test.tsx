@@ -55,7 +55,7 @@ describe('OTPField', () => {
   it('applies the size class to inputs', () => {
     renderField({ size: 'lg' })
     const first = screen.getAllByRole('textbox')[0]!
-    expect(first.className).toContain('h-12')
+    expect(first.className).toContain('h-10')
     expect(first.className).toContain('w-12')
   })
 

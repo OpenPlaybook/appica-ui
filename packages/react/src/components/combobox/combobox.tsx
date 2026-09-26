@@ -257,15 +257,15 @@ function ComboboxValue(props: ComboboxValueProps) {
 }
 
 const CHIP_SIZE: Record<ComboboxSize, string> = {
-  sm: 'h-6 px-2 text-xs rounded-xs gap-1',
-  md: 'h-8 px-3 text-sm rounded-sm gap-1.5',
-  lg: 'h-10 px-3.5 text-base rounded-md gap-1.5',
+  sm: 'h-5 px-2 text-xs rounded-xs gap-1',
+  md: 'h-6 px-2.5 text-sm rounded-sm gap-1.5',
+  lg: 'h-8 px-3 text-base rounded-md gap-1.5',
 }
 
 const CHIPS_FILLED_MIN_H: Record<ComboboxSize, string> = {
-  sm: 'has-data-[slot=combobox-chip]:min-h-8',
-  md: 'has-data-[slot=combobox-chip]:min-h-10',
-  lg: 'has-data-[slot=combobox-chip]:min-h-12',
+  sm: 'has-data-[slot=combobox-chip]:min-h-7',
+  md: 'has-data-[slot=combobox-chip]:min-h-8',
+  lg: 'has-data-[slot=combobox-chip]:min-h-10',
 }
 
 const CONTROLS_FILLED_PAD: Record<ComboboxSize, string> = {

@@ -128,6 +128,7 @@ describe('Breadcrumb', () => {
     )
     const el = screen.getByRole('button', { name: 'Settings' })
     expect(el.tagName).toBe('BUTTON')
+    expect(el.className).toContain('cursor-pointer')
   })
 
   it('renders a default separator svg, overridable via children', () => {
