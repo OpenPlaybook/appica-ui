@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { renderToStaticMarkup } from 'react-dom/server'
+import { JSDOM } from 'jsdom'
 import { describe, it, expect, vi } from 'vitest'
 import { axe } from 'vitest-axe'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs'
@@ -33,6 +35,43 @@ function Demo(
 }
 
 describe('Tabs', () => {
+  it.each(['one', 'three'])('positions the selected indicator before hydration for %s', (value) => {
+    const html = renderToStaticMarkup(<Demo defaultValue={value} />)
+    const dom = new JSDOM(
+      `<style>button { width: 80px; height: 32px; transform: none; translate: none; rotate: none; scale: none; }</style>${html}`,
+      {
+        runScripts: 'dangerously',
+        beforeParse(window) {
+          // Supply layout metrics that jsdom cannot measure while retaining parser-time script execution.
+          Object.defineProperties(window.HTMLElement.prototype, {
+            offsetWidth: { get() { return this.localName === 'button' ? 80 : 240 } },
+            offsetHeight: { get() { return 32 } },
+            scrollWidth: { get() { return 240 } },
+            scrollHeight: { get() { return 32 } },
+            offsetLeft: {
+              get() {
+                return this.localName === 'button'
+                  ? Array.from(this.parentElement.children).filter((el: Element) => el.localName === 'button').indexOf(this) * 80
+                  : 0
+              },
+            },
+            offsetTop: { get() { return 0 } },
+          })
+        },
+      },
+    )
+
+    try {
+      const indicator = dom.window.document.querySelector<HTMLElement>('[data-slot="tabs-indicator"]')!
+      expect(indicator.hidden).toBe(false)
+      expect(indicator.style.getPropertyValue('--active-tab-width')).toBe('80px')
+      expect(indicator.style.getPropertyValue('--active-tab-left')).toBe(value === 'one' ? '0px' : '160px')
+      expect(dom.window.document.querySelector('[aria-selected="true"]')?.textContent).toBe(value === 'one' ? 'One' : 'Three')
+    } finally {
+      dom.window.close()
+    }
+  })
+
   it('renders composition with default-active panel visible', () => {
     render(<Demo />)
     expect(screen.getByRole('tablist')).toHaveAttribute('data-slot', 'tabs-list')

@@ -27,7 +27,7 @@ function useTabsContext() {
 }
 
 const tabsListVariants = cva(
-  'relative flex w-fit items-center justify-center data-[orientation=vertical]:h-fit data-[orientation=vertical]:flex-col',
+  'group/tabs-list relative isolate flex w-fit items-center justify-center data-[orientation=vertical]:h-fit data-[orientation=vertical]:flex-col',
   {
     variants: {
       variant: {
@@ -70,11 +70,11 @@ const tabsIndicatorVariants = cva(
 )
 
 const tabsTriggerVariants = cva(
-  "group/trigger relative flex shrink-0 cursor-pointer items-stretch data-[orientation=vertical]:w-full text-foreground-strong font-medium select-none outline-ring transition-colors duration-250 motion-reduce:transition-none hover:text-foreground-intense data-active:pointer-events-none data-disabled:opacity-disabled data-disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='stroke-'])]:stroke-[1.85]",
+  "group/trigger relative z-1 flex shrink-0 cursor-pointer items-stretch data-[orientation=vertical]:w-full text-foreground-strong font-medium select-none outline-ring transition-colors duration-250 motion-reduce:transition-none hover:text-foreground-intense data-active:pointer-events-none data-disabled:opacity-disabled data-disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='stroke-'])]:stroke-[1.85]",
   {
     variants: {
       variant: {
-        pill: 'data-active:text-primary-foreground',
+        pill: 'data-active:text-primary-foreground transition-[color] group-has-[>[data-slot=tabs-indicator][hidden]]/tabs-list:data-active:bg-primary',
         line: 'data-active:text-primary',
       },
       size: {
@@ -222,12 +222,13 @@ function TabsList({ variant: variantProp, size: sizeProp, className, children, .
 
   return (
     <BaseTabs.List data-slot="tabs-list" className={cn(tabsListVariants({ variant, size }), className)} {...rest}>
+      <TabsContext value={listCtx}>{children}</TabsContext>
+      {/* The prehydration script measures tabs already parsed before the indicator. */}
       <BaseTabs.Indicator
         renderBeforeHydration
         data-slot="tabs-indicator"
         className={tabsIndicatorVariants({ variant })}
       />
-      <TabsContext value={listCtx}>{children}</TabsContext>
     </BaseTabs.List>
   )
 }
